@@ -1,0 +1,14 @@
+{
+	"ECONNREFUSED": {
+		"it": "Errore nel tentativo di connessione al database",
+		"en": "Error connecting to database"
+	},
+	"ENOCONNPOOL": {
+		"it": "Errore. Connection Pool per il DB non disponibile",
+		"en": "Error. DB Connection Pool not available"
+	},
+	"default": {
+		"it": "Errore Generico",
+		"en": "Generic error"
+	}
+}

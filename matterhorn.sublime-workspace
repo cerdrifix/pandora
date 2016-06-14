@@ -1,0 +1,1139 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"wr",
+				"write"
+			],
+			[
+				"enc",
+				"encryptedPassword"
+			],
+			[
+				"write",
+				"writeHead"
+			],
+			[
+				"border-b",
+				"border-bottom-color"
+			],
+			[
+				"connec",
+				"connection"
+			],
+			[
+				"serv",
+				"serviceName"
+			],
+			[
+				"con",
+				"connectionName"
+			],
+			[
+				"en",
+				"entities"
+			],
+			[
+				"enti",
+				"entities"
+			],
+			[
+				"mysql",
+				"mysqlconnector"
+			],
+			[
+				"call",
+				"callback"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"conn",
+				"connection"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"repea",
+				"repeat-x"
+			],
+			[
+				"COD_ATTRI",
+				"COD_ATTRIBUTI_VAL"
+			],
+			[
+				"append",
+				"appendTo"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"inizi",
+				"iniziali_profilo"
+			],
+			[
+				"iniz",
+				"iniziali_matricola"
+			],
+			[
+				"user",
+				"user_delegato"
+			],
+			[
+				"ref-field",
+				"ref-field-value"
+			],
+			[
+				"list",
+				"list_page"
+			],
+			[
+				"ref",
+				"ref-page-id"
+			],
+			[
+				"new",
+				"new_resource_page"
+			],
+			[
+				"gt",
+				"ga_gt_pt_list"
+			],
+			[
+				"re",
+				"ref-page-id"
+			],
+			[
+				"passwo",
+				"newPassword1"
+			],
+			[
+				"_rsa",
+				"_rsaResetPassword"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"nex",
+				"next_token_code"
+			],
+			[
+				"next",
+				"next_token_code_page"
+			],
+			[
+				"new_",
+				"new_pin_required_page"
+			],
+			[
+				"auth",
+				"authStatus"
+			],
+			[
+				"DSC",
+				"DSC_PARAM_NAMES"
+			],
+			[
+				"ref-",
+				"ref-page-id"
+			],
+			[
+				"data",
+				"data-src"
+			],
+			[
+				"appen",
+				"appendTo"
+			],
+			[
+				"sta",
+				"statusClass"
+			],
+			[
+				"__",
+				"__CUSTOM_COL_INDEX"
+			],
+			[
+				"spl",
+				"split"
+			],
+			[
+				"css",
+				"cssCustomFile"
+			],
+			[
+				"mu",
+				"multiSearch"
+			],
+			[
+				"condi",
+				"condition"
+			],
+			[
+				"visi",
+				"visibility"
+			],
+			[
+				"visibi",
+				"visibilityCondition"
+			],
+			[
+				"ref-f",
+				"ref-field"
+			],
+			[
+				"entt",
+				"entityProperty"
+			],
+			[
+				"FLG",
+				"FLG_INTERNI"
+			],
+			[
+				"titola",
+				"Titolarita"
+			],
+			[
+				"TITO",
+				"SGL_TITOLARITA"
+			],
+			[
+				"sezione",
+				"sezione_sede"
+			],
+			[
+				"fastCon",
+				"__fastConfig"
+			],
+			[
+				"div",
+				"divHTML"
+			],
+			[
+				"dra",
+				"drawChart"
+			],
+			[
+				"ref-fie",
+				"ref-field-value"
+			],
+			[
+				"index",
+				"indexOf"
+			],
+			[
+				"sedi_list",
+				"sedi_list_parameters"
+			],
+			[
+				"red",
+				"readonly"
+			],
+			[
+				"societa",
+				"societa_list"
+			],
+			[
+				"new_reso",
+				"new_resource_form"
+			],
+			[
+				"form",
+				"form_data"
+			],
+			[
+				"destin",
+				"destination"
+			],
+			[
+				"ref-fi",
+				"ref-field-value"
+			],
+			[
+				"entit",
+				"entity"
+			],
+			[
+				"tabs",
+				"resource_details_tabs"
+			],
+			[
+				"destinato",
+				"destinationPage"
+			],
+			[
+				"entity",
+				"entityProperty"
+			],
+			[
+				"COD",
+				"COD_UOG"
+			],
+			[
+				"dialog",
+				"dialogId"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"tot",
+				"totalRecords"
+			],
+			[
+				"ced_p",
+				"ced_provisioning_form_parameters"
+			],
+			[
+				"type",
+				"type"
+			],
+			[
+				"list-t",
+				"list-style"
+			],
+			[
+				"sen",
+				"sendSyncPostRequest"
+			],
+			[
+				"get",
+				"getDialog"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"border",
+				"border-top"
+			],
+			[
+				"kendoMo",
+				"kendoMobileListView"
+			],
+			[
+				"modalvi",
+				"modalview-ricerca-prodotti"
+			],
+			[
+				"secon",
+				"secondoLivello"
+			],
+			[
+				"__temp",
+				"__tempProdottoRandom"
+			],
+			[
+				"veri",
+				"verificaEsistenzaRandom"
+			],
+			[
+				"quantita",
+				"quantitaLibera"
+			],
+			[
+				"matr",
+				"matricola"
+			],
+			[
+				"refresh",
+				"refreshGrid"
+			],
+			[
+				"interve",
+				"interventoExtra"
+			],
+			[
+				"dialog_pro",
+				"dialog_prodotto_close"
+			],
+			[
+				"__tem",
+				"__tempCliente"
+			],
+			[
+				"dia",
+				"dialog_cliente_open"
+			],
+			[
+				"codi",
+				"codiceMagazzino"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "matterhorn/app.js",
+			"settings":
+			{
+				"buffer_size": 1438,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "matterhorn/libs/Auth.js",
+			"settings":
+			{
+				"buffer_size": 1178,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "matterhorn/libs/MySqlConnector.js",
+			"settings":
+			{
+				"buffer_size": 809,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "matterhorn/libs/Config.js",
+			"settings":
+			{
+				"buffer_size": 840,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "matterhorn/libs/GenericConnector.js",
+			"settings":
+			{
+				"buffer_size": 1563,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "matterhorn/www/login.html",
+			"settings":
+			{
+				"buffer_size": 1274,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "matterhorn/www/js/libs/log.js",
+			"settings":
+			{
+				"buffer_size": 1959,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "matterhorn/www/js/libs/net.js",
+			"settings":
+			{
+				"buffer_size": 3711,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn"
+	],
+	"file_history":
+	[
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/app.conf",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/www/js/libs/net.js",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/www/js/libs/jquery.min.js",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/www/js/libs/log.js",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/libs/MySqlConnector.js",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/libs/GenericConnector.js",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/res/errors.lang",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/libs/DbConnector.js",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/libs/Dictionary.js",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/libs/Config.js",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/libs/Logger.js",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/app.js",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/www/login.html",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/www/js/libs/network.js",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/www/js/libs/utils.js",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/www/css/login.css",
+		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/libs/Auth.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Madds/matterhorn/www/js/libs/jquery.min.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Madds/appfog/src/app.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Madds/matterhorn/www/css/main.css",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Madds/matterhorn/app.conf",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Madds/matterhorn/logs/debug.log",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Madds/matterhorn/libs/Logger.js",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/conf/provisioning.json",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/js/ced/cedacri.fast.client.plugins.list.js",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/conf/configurazione_profili.json",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/js/jquery.jqGrid.src.js",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/js/ced/cedacri.fast.client.libs.filter.js",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/css/common.css",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/p/fastWrap.aspx",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/js/ced/cedacri.fast.client.plugins.menu.js",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/css/ie7.css",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/css/ie8.css",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/js/ced/cedacri.fast.client.common.js",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/conf/fast.json",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/js/ced/cedacri.fast.client.utils.js",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/js/ced/cedacri.fast.client.libs.net.js",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/css/cedacri/main.css",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/css/desio/main.css",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/js/ced/cedacri.fast.client.libs.config.js",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/css/ie.css",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/conf/console_controllo_procedures.json",
+		"/Volumes/c$/inetpub/CONTOSO/WEB/js/ced/cedacri.fast.client.libs.log.js",
+		"/Volumes/c$/FAST/src/Fast/Cedacri.Fast.UI.Web.TestClient/conf/ced/provisioning.json",
+		"/Volumes/c$/FAST/src/Fast/Cedacri.Fast.UI.Web.TestClient/conf/ced/organigramma.json",
+		"/Volumes/c$/FAST/src/Fast/Cedacri.Fast.UI.Web.TestClient/conf/ced/configurazione_profili.json",
+		"/Volumes/c$/FAST/Web/NEWCO/conf/ced/sottosistemi_societa.json",
+		"/Volumes/c$/FAST/Web/NEWCO/conf/ced/configurazione_profili.json",
+		"/Volumes/c$/FAST/Web/NEWCO/conf/ced/console_controllo_procedures.json",
+		"/Volumes/c$/FAST/Web/DEV/conf/ced/configurazione_profili.json",
+		"/Volumes/c$/FAST/Web/DEV/conf/ced/provisioning.json",
+		"/Volumes/c$/FAST/Web/NEWCO/index.html",
+		"/Volumes/c$/FAST/src/Fast/Cedacri.Fast.UI.Web.TestClient/conf/ced/gruppi_aziendali.json",
+		"/Volumes/c$/FAST/Web/DEV/conf/ced/organigramma.json",
+		"/Volumes/c$/FAST/Web/DEV/conf/ced/selfResetLogin.json",
+		"/Volumes/c$/FAST/Web/NEWCO/conf/ced/provisioning.json",
+		"/Volumes/c$/FAST/Web/DEV/js/ced/cedacri.fast.client.libs.config.js",
+		"/Volumes/c$/FAST/Web/NEWCO/js/ced/cedacri.fast.client.libs.config.js",
+		"/Volumes/c$/FAST/src/Fast/Cedacri.Fast.UI.Web.TestClient/js/ced/cedacri.fast.client.libs.config.js",
+		"/Volumes/c$/FAST/src/Fast/Cedacri.Fast.UI.Web.TestClient/conf/ced/societa.json",
+		"/Volumes/c$/FAST/src/Fast/Cedacri.Fast.UI.Web.TestClient/conf/ced/console_controllo_procedures.json",
+		"/Volumes/c$/FAST/src/Fast/Cedacri.Fast.UI.Web.TestClient/conf/ced/console_controllo_procedures_2.json",
+		"/Volumes/c$/FAST/src/Fast/Cedacri.Fast.UI.Web.TestClient/conf/ced/sottosistemi_societa.json",
+		"/Volumes/c$/FAST/src/Fast/Cedacri.Fast.UI.Web.TestClient/conf/ced/configurazione_menu.json",
+		"/Volumes/c$/FAST/Web/DEV/conf/ced/gruppi_aziendali.json",
+		"/Volumes/c$/FAST/Web/DEV/conf/ced/societa.json",
+		"/Volumes/c$/FAST/Web/SelfReset/conf/ced/selfResetLogin.json",
+		"/Volumes/c$/FAST/Web/SelfReset/js/customs/selfResetLogin.custom.js",
+		"/Volumes/c$/FAST/Web/NEWCO/conf/ced/wizard2.json",
+		"/Volumes/c$/FAST/src/Fast/Cedacri.Fast.UI.Web.TestClient/conf/ced/wizard2.json",
+		"/Volumes/c$/FAST/Web/NEWCO/conf/ced/console_controllo_procedures_2.json",
+		"/Volumes/c$/FAST/Web/NEWCO/conf/ced/gruppi_aziendali.json",
+		"/Volumes/c$/FAST/Web/NEWCO/conf/ced/societa.json",
+		"/Volumes/c$/FAST/Web/NEWCO/css/common.css",
+		"/Volumes/c$/FAST/src/Fast/Cedacri.Fast.UI.Web.TestClient/css/common.css",
+		"/Volumes/c$/FAST/Web/DEV/css/common.css",
+		"/Volumes/c$/FAST/Web/DEV/conf/ced/deleghe.json",
+		"/Volumes/c$/FAST/Web/DEV/conf/ced/gestione_risorse_esterne.json",
+		"/Volumes/c$/FAST/Web/DEV/js/ced/cedacri.fast.client.utils.js",
+		"/Volumes/c$/FAST/src/Fast/Cedacri.Fast.UI.Web.TestClient/js/ced/cedacri.fast.client.utils.js",
+		"/Volumes/c$/FAST/Web/SelfReset/js/ced/cedacri.fast.client.utils.js",
+		"/Volumes/c$/FAST/Web/NEWCO/js/ced/cedacri.fast.client.utils.js",
+		"/Volumes/c$/FAST/Web/NEWCO/js/customs/organigramma.custom.js",
+		"/Volumes/c$/FAST/Web/DEV/conf/ced/wizard2.json",
+		"/Volumes/c$-1/FAST/WS/DEV/Web.config",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/ced/cedacri.fast.client.libs.config.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/p/fastWrap.aspx",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/ced/cedacri.fast.client.libs.filter.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/css/layouts.css",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/ced/cedacri.fast.client.plugins.list.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/ced/cedacri.fast.client.plugins.combobox.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/css/common.css",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/ced/cedacri.fast.client.utils.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/configurazione_profili.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/customs/console_controllo_procedures.custom.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/selfResetLogin.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/customs/selfResetLogin.custom.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/gruppi_aziendali.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/societa.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/ced/configurazione_profili.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/fast.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/css/wrapper.css",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/css/combobox.css",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/customs/organigramma.custom.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/customs/stampaOrganigramma.custom.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/organigramma.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/dashboard.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/customs/console_controllo_procedures.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/css/newco/main.css",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/css/customs/stampaOrganigramma.custom.css",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/css/customs/organigramma.custom.css",
+		"/Users/cerdrifix/Downloads/sedi.csv",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/cedacri/organigramma.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/cedacri/provisioning.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/desio/configurazione_menu.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/desio/configurazione_profili.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/desio/gruppi_aziendali.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/desio/organigramma.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/desio/provisioning.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/desio/selfResetLogin.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/configurazione_menu.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/console_controllo_procedures.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/provisioning.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/sedi.json",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/ced/cedacri.fast.client.plugins.menu.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/jquery.jqGrid.src.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/p/organigramma/custom.js",
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/p/configurazione_sistema/custom.css"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf",
+			"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js",
+			"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/ced",
+			"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco",
+			"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf",
+			"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js",
+			"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient",
+			"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/p",
+			"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/ced",
+			"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast.Dal/Cedacri.Fast.UI.Web.TestClient",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"console.log",
+			"libs.",
+			"cedacr",
+			"cedacri.fast.client.libs.log",
+			"ripulisco la variabile smartsel ",
+			"ELIMINA",
+			"smartsel",
+			"setSelection",
+			"setSelec",
+			"selarrrow = []",
+			"gridcomple",
+			"next_",
+			": function()",
+			"page",
+			"selarr",
+			"refresh",
+			"refreshGrid",
+			"COD_TIPO_",
+			"TSS",
+			"help_dial",
+			"widt",
+			")).",
+			"width",
+			"listEvents",
+			"sottosis",
+			"action",
+			"actions",
+			"\"type\": \"local\"",
+			"type\": \"local",
+			"parame",
+			"width",
+			"button",
+			"COD_SOCIETA_RICHIENTE",
+			"DELETE_INST",
+			"d_rif",
+			"cedacri",
+			"Cedacri",
+			"\"ref-page-id\": \"associa_valori_a_ruoli_page\",\n									\"ref-id\":",
+			",\n									\"for\": [\"data\"]",
+			"\"pageId\": \"associa_valori_a_ruoli_page\",\n									",
+			",\n									\"for\": [\"data\"]",
+			"\"ref-id\": ",
+			"\"id\":",
+			"\"pageId\": \"associa_valori_a_ruoli_page\",\n									",
+			"profili_associati",
+			"COD_RUOLO",
+			"tipo_attributo",
+			"tipo_att",
+			"sottosistema",
+			"data-src\": \"form",
+			".List",
+			"console",
+			"dialog",
+			"destination",
+			"}\n,\n{\n",
+			"||",
+			";;",
+			"dataBinding\": {",
+			"scroll",
+			"filter",
+			"var _this = this,\n							cfg = $this.data(\"config\")",
+			"scroll",
+			"pageId",
+			"destination.pageId",
+			"destination.id",
+			"parameter.id",
+			"parameter.pageId",
+			"__getParameter",
+			"__accessoryFunctions",
+			"accessoryFunctions",
+			"del",
+			"\"ref-field\"",
+			"ref-field",
+			"\"ref-field\"",
+			"isBinderOf",
+			"form_data",
+			"form-data",
+			"actions",
+			"destination",
+			"actionGroup",
+			"ced-ui-form-parameter",
+			"actiong",
+			"getActionButton",
+			"BaseUrl",
+			"baseUrl",
+			"BaseUrl",
+			"baseUrl",
+			"cedacri.fast.client.libs.net.baseUrl",
+			"fast",
+			"cedacri.fast.client.libs.net.baseUrl",
+			"baseUrl",
+			"this.fastConfig = ",
+			"parseDate",
+			"/Date",
+			"console.log",
+			"console",
+			"Searching",
+			"console.log",
+			"_d",
+			"for(var ",
+			"data-type",
+			"\"entity\"",
+			"\"entity\":",
+			"{ \"entity\":",
+			"{ \"entity\": ",
+			"entity",
+			"{ \"entity\": ",
+			"{ \"entity",
+			"callProcedure",
+			"destinationty",
+			"destinationtype",
+			"default",
+			"\"field\"",
+			"ref-field",
+			"\"field\"",
+			"data",
+			"dataBinding",
+			"databin",
+			"procedure",
+			"select",
+			"today",
+			"\"type\": \"list\"",
+			"list",
+			"\n							\"data\": {\n								\"type\": \"procedure\",",
+			"list",
+			"page-data",
+			"page-data-key",
+			"ID_PERSON"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"libs.log.print",
+			"mds.libs.",
+			"\"ref-page-id\": \"associa_valori_a_ruoli_page\",\n									\"name\":",
+			"",
+			"\"data-src\": \"form\",\n									\"ref-page-id\": \"associa_valori_a_ruoli_page\",\n									",
+			"",
+			"\"ref-id\":",
+			"\"data-src\": \"form\",\n									\"ref-page-id\": \"associa_valori_a_ruoli_page\",\n									",
+			"},\n{\n",
+			"\",\n	\"for\": [\"data\"]\n}",
+			",\n{\n	\"pageId\": \"associa_valori_a_ruoli_page\",\n	\"id\": \"",
+			"ref-page-id",
+			"form",
+			"cedacri.fast.client.libs.config",
+			"cedacri.fast.client.libs.log",
+			"cedacri.fast.client.plugins.formDialog",
+			"cedacri.fast.client.plugins.list",
+			"cedacri.fast.client.libs.log",
+			":"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "matterhorn/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1438,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1303,
+								1303
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "matterhorn/libs/Auth.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1178,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								588,
+								588
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "matterhorn/libs/MySqlConnector.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 809,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								733,
+								733
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "matterhorn/libs/Config.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 840,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "matterhorn/libs/GenericConnector.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1563,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								910,
+								910
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "matterhorn/www/login.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1086,
+								1086
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 66.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "matterhorn/www/js/libs/log.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1959,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1368,
+								1946
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "matterhorn/www/js/libs/net.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3711,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1575,
+								1575
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 368.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "matterhorn.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"kdialog",
+				"css/kdialogs.css"
+			],
+			[
+				"kpratiche",
+				"css/kpratiche.css"
+			],
+			[
+				"datala",
+				"js/tam.dataLayer.js"
+			],
+			[
+				"tab",
+				"js/jquery.tamTabs.js"
+			],
+			[
+				"kp.",
+				"js/kp.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 305.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

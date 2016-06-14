@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login Page</title>
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+	</head>
+	<body>
+		<script type="text/javascript" src="js/libs/jquery.min.js"></script>
+		<script type="text/javascript" src="js/libs/log.js"></script>
+		<script type="text/javascript" src="js/libs/net.js"></script>
+		<div id="wrapper">
+			<h1>Effettua l'accesso al sistema</h1>
+			<form action="#">
+				<p>Username: <input type="text" name="username" value="CREDL18" /></p>
+				<p>Password: <input type="password" name="password" value="pass" /></p>
+				<p><input type="submit" value="Effettua il login.." /></p>
+			</form>
+		</div>
+
+		<script type="text/javascript">
+			(function($) {
+				
+				$("form").submit(function() {
+					var username = this.username.value,
+						password = this.password.value;
+
+					mds.libs.net.sendSyncPostRequest("/login", {
+							username: username, 
+							password:password
+						},
+						function(data) {
+							if(data.status == "ko") {
+								alert("Si é verificato un errore: " + data.error.code);
+								return;
+							}
+							console.log("data: ", data);
+						}
+					);
+
+					return false;
+				});
+
+				$(function() {
+					$("form input:first").focus();
+				});
+			})(jQuery);
+		</script>
+	</body>
+</html>
