@@ -1,43 +1,64 @@
-CREATE PROCEDURE SP_INSERT_PLAYER(
-	OUT id SERIAL,
-	IN name VARCHAR(45),
-  IN surname VARCHAR(45),
-  IN birth_season SMALLINT,
-  IN birth_day SMALLINT,
-  IN country VARCHAR(2),
-  IN gk_skill DECIMAL(5,3),
-  IN de_skill DECIMAL(5,3),
-  IN mf_skill DECIMAL(5,3),
-  IN cr_skill DECIMAL(5,3),
-  IN tk_skill DECIMAL(5,3),
-  IN fw_skill DECIMAL(5,3)
+
+
+DROP PROCEDURE IF EXISTS `matterhorn`.`SP_INSERT_PLAYER`;
+
+DELIMITER $$;
+
+CREATE PROCEDURE `matterhorn`.`SP_INSERT_PLAYER`(
+	OUT	_id 					BIGINT,
+	IN 	_name 				VARCHAR(45),
+  IN 	_surname 			VARCHAR(45),
+  IN 	_birth_season SMALLINT,
+  IN 	_birth_day 		SMALLINT,
+  IN 	_country 			VARCHAR(2),
+  IN 	_gk_skill 		DECIMAL(5,3),
+  IN 	_de_skill 		DECIMAL(5,3),
+  IN 	_mf_skill 		DECIMAL(5,3),
+  IN 	_cr_skill 		DECIMAL(5,3),
+  IN 	_tk_skill 		DECIMAL(5,3),
+  IN 	_fw_skill 		DECIMAL(5,3)
 )
 BEGIN
 	
-  DECLARE id SERIAL;
+	DECLARE exit handler for sqlexception
+		BEGIN
+			-- ERROR
+		ROLLBACK;
+	END;
   
-  INSERT INTO PLAYERS (
-		`name`, 
-    `surname`, 
-    `birth_season`, 
-    `birth_day`, 
-    `country`, 
-    `personality`, 
-    `form`, 
-    `experience`, 
-    `month_salary` 
-	)
-  VALUES (
-		name,
-    surname,
-    birth_season, 
-    birth_day, 
-    country, 
-    1,
-    1,
-    1,
-    1
-	)
+  START TRANSACTION;
   
-  
-END;
+		INSERT INTO `matterhorn`.`PLAYERS` (
+			`name`, 
+			`surname`, 
+			`birth_season`, 
+			`birth_day`, 
+			`country`, 
+			`personality`, 
+			`form`, 
+			`experience`, 
+			`month_salary` 
+		) VALUES (
+			_name,
+			_surname,
+			_birth_season, 
+			_birth_day, 
+			_country, 
+			1,
+			1,
+			1,
+			1
+		);
+		
+		SELECT @@identity into _id;
+		
+		INSERT INTO `matterhorn`.`PLAYERS_SKILLS` (`player_id`,`skill_id`,`value`) VALUES (_id, 'GK', _gk_skill);
+		INSERT INTO `matterhorn`.`PLAYERS_SKILLS` (`player_id`,`skill_id`,`value`) VALUES (_id, 'DE', _de_skill);
+		INSERT INTO `matterhorn`.`PLAYERS_SKILLS` (`player_id`,`skill_id`,`value`) VALUES (_id, 'MF', _mf_skill);
+		INSERT INTO `matterhorn`.`PLAYERS_SKILLS` (`player_id`,`skill_id`,`value`) VALUES (_id, 'CR', _cr_skill);
+		INSERT INTO `matterhorn`.`PLAYERS_SKILLS` (`player_id`,`skill_id`,`value`) VALUES (_id, 'TK', _tk_skill);
+		INSERT INTO `matterhorn`.`PLAYERS_SKILLS` (`player_id`,`skill_id`,`value`) VALUES (_id, 'FW', _fw_skill);
+	
+	COMMIT;
+	
+END

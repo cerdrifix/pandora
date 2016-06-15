@@ -1,17 +1,17 @@
 #######################################################################
-## 							Creazione DB 							 ##
+## 							Creazione DB 							 				##
 #######################################################################
 
 ## Schema
 CREATE DATABASE IF NOT EXISTS `matterhorn` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
 
+DROP TABLE IF EXISTS `matterhorn`.`TEAMS_PLAYERS`;
 DROP TABLE IF EXISTS `matterhorn`.`PLAYERS_SKILLS`;
 DROP TABLE IF EXISTS `matterhorn`.`PLAYERS_SPECIALITIES`;
 DROP TABLE IF EXISTS `matterhorn`.`PLAYERS`;
 DROP TABLE IF EXISTS `matterhorn`.`SKILLS`;
 DROP TABLE IF EXISTS `matterhorn`.`SPECIALITIES`;
 DROP TABLE IF EXISTS `matterhorn`.`FORMATIONS`;
-
 DROP TABLE IF EXISTS `matterhorn`.`TEAMS`;
 DROP TABLE IF EXISTS `matterhorn`.`USERS`;
 
@@ -38,8 +38,8 @@ COMMIT;
 ## Tabella Skills
 CREATE TABLE `matterhorn`.`SKILLS` (
 	`id` CHAR(2) NOT NULL UNIQUE,
-  `description` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`)
+	`description` VARCHAR(45) NOT NULL,
+	PRIMARY KEY (`id`)
 );
 
 INSERT INTO `matterhorn`.`SKILLS` VALUES ('GK', 'Parate');
@@ -55,7 +55,7 @@ CREATE TABLE `matterhorn`.`PLAYERS` (
 	`id` SERIAL,
   `name` VARCHAR(45) NOT NULL,
   `surname` VARCHAR(45) NOT NULL,
-  `birth_season` SMALLINT UNSIGNED NOT NULL,
+  `birth_season` SMALLINT SIGNED NOT NULL,
   `birth_day` SMALLINT UNSIGNED NOT NULL,
   `country` varchar(2) NOT NULL,
   `personality` SMALLINT SIGNED NOT NULL,
@@ -68,8 +68,8 @@ CREATE TABLE `matterhorn`.`PLAYERS` (
 ## Tabella players_skills
 CREATE TABLE `matterhorn`.`PLAYERS_SKILLS` (
 	`player_id` BIGINT UNSIGNED NOT NULL,
-  `skill_id` CHAR(2) NOT NULL,
-  `value` DECIMAL(5,3) UNSIGNED NOT NULL,
+	`skill_id` CHAR(2) NOT NULL,
+	`value` DECIMAL(5,3) UNSIGNED NOT NULL,
   PRIMARY KEY (`player_id`, `skill_id` )
 );
 ALTER TABLE `matterhorn`.`PLAYERS_SKILLS` ADD INDEX `PS_SKILLS_FK_idx` (`skill_id` ASC);
@@ -83,7 +83,7 @@ ADD CONSTRAINT `PS_SKILLS_FK`
 
 ## Tabella players_specialities
 CREATE TABLE `matterhorn`.`PLAYERS_SPECIALITIES` (
-	`player_id` BIGINT UNSIGNED NOT NULL,
+	`player_id` SERIAL,
   `speciality_id` TINYINT UNSIGNED NOT NULL,
   `value` DECIMAL (5,3) UNSIGNED NOT NULL,
   PRIMARY KEY (`player_id`, `speciality_id`)
@@ -103,7 +103,7 @@ ADD CONSTRAINT `PL_SPEC_SPECIALITIES_FK`
   
 ## Tabella Utenti
 CREATE TABLE `matterhorn`.`USERS` (
-	`id` INT UNSIGNED NOT NULL UNIQUE,
+	`id` SERIAL,
   `username` VARCHAR(50) NOT NULL,
   `name` VARCHAR(50) NOT NULL,
   `surname` VARCHAR(50) NOT NULL,
@@ -116,7 +116,7 @@ CREATE TABLE `matterhorn`.`USERS` (
 CREATE TABLE `matterhorn`.`TEAMS` (
 	`id` SERIAL,
   `description` VARCHAR(50) NOT NULL,
-  `owner` INT UNSIGNED NOT NULL,
+  `owner` BIGINT UNSIGNED NOT NULL,
   `creation_date` DATETIME NOT NULL,
   `end_date` DATETIME NOT NULL,
   `country` VARCHAR(3) NOT NULL,
@@ -128,6 +128,24 @@ ADD INDEX `TEAMS_USERS_FK_idx` (`owner` ASC);
 ALTER TABLE `matterhorn`.`TEAMS` 
 ADD CONSTRAINT `TEAMS_USERS_FK`
   FOREIGN KEY (`owner`) REFERENCES `matterhorn`.`USERS` (`id`);
+  
+
+## Tabella associazione Team e players
+CREATE TABLE `matterhorn`.`TEAMS_PLAYERS` (
+	`team_id` BIGINT UNSIGNED NOT NULL,
+	`player_id` BIGINT UNSIGNED NOT NULL,
+  `dataInizio` DATETIME NOT NULL,
+  `dataFine` DATETIME NOT NULL,
+  PRIMARY KEY (`player_id`, `team_id` )
+);
+ALTER TABLE `matterhorn`.`TEAMS_PLAYERS` ADD INDEX `TS_TEAMS_FK_idx` (`team_id` ASC);
+ALTER TABLE `matterhorn`.`TEAMS_PLAYERS` ADD INDEX `TS_PLAYERS_FK_idx` (`player_id` ASC);
+
+ALTER TABLE `matterhorn`.`TEAMS_PLAYERS` 
+ADD CONSTRAINT `TS_PLAYERS_FK`
+  FOREIGN KEY (`player_id`) REFERENCES `matterhorn`.`PLAYERS` (`id`),
+ADD CONSTRAINT `TS_SKILLS_FK`
+  FOREIGN KEY (`team_id`) REFERENCES `matterhorn`.`TEAMS` (`id`);
 
   
 ## Tabella formazioni di gioco
