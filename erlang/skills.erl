@@ -1,30 +1,22 @@
 -module(skills).
--export([getAll/0]).
--record(skill, {id, description}).
+-export([get/0, get/1, print/0]).
+-include("records.hrl").
 
-getAll() ->
+%% Used to manage skills definitions
 
-	application:start(sasl),
-	crypto:start(),
-	application:start(emysql),
-	emysql:add_pool(mth_pool, [
-		{ size,		1 },
-		{ user,		"root" },
-		{ password,	"bill2kill" },
-		{ host, 	"localhost" },
-		{ port, 	3306 },
-		{ database,	"matterhorn" },
-		{ encoding,	utf8 }
-	]),
-	Record = emysql:execute(mth_pool, <<"SELECT id, description FROM SKILLS">>),
-	Skills = emysql:as_record(Result, skill, record_info(fields, skill)),
+get() ->
+	Result = db:get(<<"SELECT id, description FROM SKILLS">>),
+	Items = emysql:as_record(Result, skill, record_info(fields, skill)),
+	Items.
+
+get(Key) ->
+	Result = db:get(<<"SELECT id, description FROM SKILLS WHERE id = ?">>, [Key]),
+	Items = emysql:as_record(Result, skill, record_info(fields, skill)),
+	Items.
+
+print() ->
+	Items = skills:get(),
 	[begin
-		io:format("skill: ~p, ~p~n", [Skill#skill.id, Skill#skill.description])
-	end || Skill <- Skills].
-
-	%% ------------------------------------------------------------------- 
-
-	io:format("~n~s~n", [string:chars($-,72)]),
-	io:format("Rows: ~p~n", [rows]),
-
-    ok.
+		io:format("skill: ~p, ~p~n", [Item#skill.id, Item#skill.description])
+	end || Item <- Items],
+	ok.

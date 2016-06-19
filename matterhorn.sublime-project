@@ -3,6 +3,12 @@
 	[
 		{
 			"path": "matterhorn"
+		},
+		{
+			"path": "erlang"
+		},
+		{
+			"path": "db"
 		}
 	]
 }
