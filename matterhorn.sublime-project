@@ -3,6 +3,18 @@
 	[
 		{
 			"path": "matterhorn"
+		},
+		{
+			"path": "db"
+		},
+		{
+			"path": "erl"
+		},
+		{
+			"path": "erlang"
+		},
+		{
+			"path": "erl-test"
 		}
 	]
 }

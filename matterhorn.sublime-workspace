@@ -384,6 +384,14 @@
 			}
 		},
 		{
+			"file": "db/Matterhorn_creation.sql",
+			"settings":
+			{
+				"buffer_size": 5731,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "matterhorn/libs/Auth.js",
 			"settings":
 			{
@@ -396,14 +404,6 @@
 			"settings":
 			{
 				"buffer_size": 809,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "matterhorn/libs/Config.js",
-			"settings":
-			{
-				"buffer_size": 840,
 				"line_ending": "Unix"
 			}
 		},
@@ -472,7 +472,6 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn"
 	],
 	"file_history":
 	[
@@ -812,8 +811,8 @@
 						"selection":
 						[
 							[
-								1303,
-								1303
+								511,
+								511
 							]
 						],
 						"settings":
@@ -830,6 +829,36 @@
 				},
 				{
 					"buffer": 1,
+					"file": "db/Matterhorn_creation.sql",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5731,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								701,
+								701
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SQL/SQL.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "matterhorn/libs/Auth.js",
 					"semi_transient": false,
 					"settings":
@@ -859,7 +888,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "matterhorn/libs/MySqlConnector.js",
 					"semi_transient": false,
 					"settings":
@@ -888,35 +917,6 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "matterhorn/libs/Config.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 840,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
 					"buffer": 4,
 					"file": "matterhorn/libs/GenericConnector.js",
 					"semi_transient": false,
@@ -942,7 +942,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
