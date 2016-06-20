@@ -1,16 +1,27 @@
 -module(skills).
--export([get/0, get/1, print/0]).
+-export([run/0, get/0, get/1, print/0]).
 -include("records.hrl").
+-define(FIELDS, [
+	"id",
+	"description"
+]).
+-define(TABLE, "SKILLS").
+-define(KEY, "id")
 
 %% Used to manage skills definitions
 
+run() ->
+	skills:print().
+
 get() ->
-	Result = db:get(<<"SELECT id, description FROM SKILLS">>),
+	Query = "SELECT " ++ string:join(?FIELDS, ", ") ++ " FROM " ++ ?TABLE,
+	Result = db:get(Query),
 	Items = emysql:as_record(Result, skill, record_info(fields, skill)),
 	Items.
 
 get(Key) ->
-	Result = db:get(<<"SELECT id, description FROM SKILLS WHERE id = ?">>, [Key]),
+	Query = "SELECT " ++ string:join(?FIELDS, ", ") ++ " FROM " ++ ?TABLE + " WHERE " ++ ?KEY ++ " = ?",
+	Result = db:get(Query, [Key]),
 	Items = emysql:as_record(Result, skill, record_info(fields, skill)),
 	Items.
 

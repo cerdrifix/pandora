@@ -11,5 +11,5 @@ fi;
 echo "Using app path: $APP_PATH"
 
 erlc db.erl
-erlc skills.erl
-erl -pa $APP_PATH -s skills run -s init stop -noshell
+erlc players.erl
+erl -pa $APP_PATH -s players run -s init stop -noshell
