@@ -2,7 +2,7 @@
 
 ERL_VER=`erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().' -noshell`
 
-if [ $ERL_VER > "18" ]; then
+if [ $ERL_VER = "18" ]; then
 	APP_PATH=libs/Emysql18
 else
 	APP_PATH=libs/Emysql17

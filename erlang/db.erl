@@ -1,7 +1,7 @@
 -module(db).
 -export([getPool/0, get/1, get/2]).
 
--include("records.hrl").
+-include("include/records.hrl").
 
 getPool() ->
 	application:start(sasl),

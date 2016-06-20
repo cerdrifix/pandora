@@ -1,6 +1,6 @@
 -module(specialities).
 -export([get/0, get/1, print/0]).
--include("records.hrl").
+-include("include/records.hrl").
 
 %% Used to manage specialities definitions
 
