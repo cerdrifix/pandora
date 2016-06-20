@@ -8,8 +8,7 @@ CREATE PROCEDURE `matterhorn`.`SP_INSERT_PLAYER`(
 	OUT	_id 					BIGINT,
 	IN 	_name 				VARCHAR(45),
   IN 	_surname 			VARCHAR(45),
-  IN 	_birth_season SMALLINT,
-  IN 	_birth_day 		SMALLINT,
+  IN 	_birth_day 		BIGINT,
   IN 	_country 			VARCHAR(2),
   IN 	_gk_skill 		DECIMAL(5,3),
   IN 	_de_skill 		DECIMAL(5,3),
@@ -31,7 +30,6 @@ BEGIN
 		INSERT INTO `matterhorn`.`PLAYERS` (
 			`name`, 
 			`surname`, 
-			`birth_season`, 
 			`birth_day`, 
 			`country`, 
 			`personality`, 
@@ -41,7 +39,6 @@ BEGIN
 		) VALUES (
 			_name,
 			_surname,
-			_birth_season, 
 			_birth_day, 
 			_country, 
 			1,

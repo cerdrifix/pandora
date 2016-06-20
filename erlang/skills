@@ -1,0 +1,4 @@
+#!/bin/bash
+erlc connection.erl
+erlc skills.erl
+erl -pa libs/Emysql-master/ebin -s skills run -s init stop -noshell
