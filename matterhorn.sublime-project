@@ -5,10 +5,16 @@
 			"path": "matterhorn"
 		},
 		{
+			"path": "db"
+		},
+		{
+			"path": "erl"
+		},
+		{
 			"path": "erlang"
 		},
 		{
-			"path": "db"
+			"path": "erl-test"
 		}
 	]
 }
