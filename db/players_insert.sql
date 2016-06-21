@@ -115,3 +115,6 @@ VALUES (@team_id, @player_id, NOW(), '30000101');
 CALL `matterhorn`.`SP_INSERT_PLAYER`(@player_id, 'Antonio', 'Panchina', (-20 * 126) - 66, 'IT', 1.18, 4.73, 14.88, 5.23, 7.23, 5.12);
 INSERT INTO `matterhorn`.`TEAMS_PLAYERS` (`team_id`,`player_id`,`dataInizio`,`dataFine`)
 VALUES (@team_id, @player_id, NOW(), '30000101');
+
+INSERT INTO `matterhorn`.`MATCHES` (due_date, country, league, season, week, home_team_id, home_team_formation_id, away_team_id, away_team_formation_id)
+VALUES ('20160701', 'IT', 1, 1, 1, 1, '433', 2, '352');

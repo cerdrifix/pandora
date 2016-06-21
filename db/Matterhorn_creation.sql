@@ -5,6 +5,9 @@
 ## Schema
 CREATE DATABASE IF NOT EXISTS `matterhorn` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
 
+
+DROP TABLE IF EXISTS `matterhorn`.`MATCHES`;
+DROP TABLE IF EXISTS `matterhorn`.`MATCHES_FORMATIONS`;
 DROP TABLE IF EXISTS `matterhorn`.`TEAMS_PLAYERS`;
 DROP TABLE IF EXISTS `matterhorn`.`PLAYERS_SKILLS`;
 DROP TABLE IF EXISTS `matterhorn`.`PLAYERS_SPECIALTIES`;
@@ -14,6 +17,17 @@ DROP TABLE IF EXISTS `matterhorn`.`SKILLS`;
 DROP TABLE IF EXISTS `matterhorn`.`SPECIALTIES`;
 DROP TABLE IF EXISTS `matterhorn`.`FORMATIONS`;
 DROP TABLE IF EXISTS `matterhorn`.`USERS`;
+
+  
+## Tabella formazioni di gioco
+CREATE TABLE `matterhorn`.`FORMATIONS` (
+	`id` VARCHAR(5) NOT NULL UNIQUE,
+	`description` VARCHAR(20) NOT NULL,
+  PRIMARY KEY ( `id` )
+);
+INSERT INTO `matterhorn`.`FORMATIONS` VALUES ('442', '4-4-2');
+INSERT INTO `matterhorn`.`FORMATIONS` VALUES ('433', '4-3-3');
+INSERT INTO `matterhorn`.`FORMATIONS` VALUES ('352', '3-5-2');
 
 ## Tabella "Specialities"
 CREATE TABLE `matterhorn`.`SPECIALTIES` (
@@ -144,14 +158,43 @@ ADD CONSTRAINT `TS_PLAYERS_FK`
   FOREIGN KEY (`player_id`) REFERENCES `matterhorn`.`PLAYERS` (`id`),
 ADD CONSTRAINT `TS_SKILLS_FK`
   FOREIGN KEY (`team_id`) REFERENCES `matterhorn`.`TEAMS` (`id`);
-
   
-## Tabella formazioni di gioco
-CREATE TABLE `matterhorn`.`FORMATIONS` (
-	`id` VARCHAR(5) NOT NULL UNIQUE,
-  `description` VARCHAR(20) NOT NULL,
-  PRIMARY KEY ( `id` )
+  
+
+
+## Tabella delle partite
+CREATE TABLE `matterhorn`.`MATCHES` (
+	`id` SERIAL,
+   `due_date` DATETIME,
+   `country` VARCHAR(2) NOT NULL,
+   `league` INT UNSIGNED NOT NULL,
+   `season` INT UNSIGNED NOT NULL,
+   `week` TINYINT UNSIGNED NOT NULL,
+   `home_team_id` BIGINT UNSIGNED NOT NULL,
+   `home_team_formation_id` VARCHAR(5) NOT NULL,
+   `away_team_id` BIGINT UNSIGNED NOT NULL,
+   `away_team_formation_id` VARCHAR(5) NOT NULL,
+   PRIMARY KEY (`id`)
 );
-INSERT INTO `matterhorn`.`FORMATIONS` VALUES ('442', '4-4-2');
-INSERT INTO `matterhorn`.`FORMATIONS` VALUES ('433', '4-3-3');
-INSERT INTO `matterhorn`.`FORMATIONS` VALUES ('352', '3-5-2');
+ALTER TABLE `matterhorn`.`MATCHES` ADD INDEX `MATCHES_HTEAMS_FK_idx` (`home_team_id` ASC);
+ALTER TABLE `matterhorn`.`MATCHES` ADD INDEX `MATCHES_ATEAMS_FK_idx` (`away_team_id` ASC);
+
+ALTER TABLE `matterhorn`.`MATCHES`
+ADD CONSTRAINT `MATCHES_HTEAM_FK`
+  FOREIGN KEY (`home_team_id`) REFERENCES `matterhorn`.`TEAMS` (`id`),
+ADD CONSTRAINT `MATCHES_ATEAM_FK`
+  FOREIGN KEY (`away_team_id`) REFERENCES `matterhorn`.`TEAMS` (`id`),
+ADD CONSTRAINT `MATCHES_HTFORM_FK`
+  FOREIGN KEY (`home_team_formation_id`) REFERENCES `matterhorn`.`FORMATIONS` (`id`),
+ADD CONSTRAINT `MATCHES_ATFORM_FK`
+  FOREIGN KEY (`away_team_formation_id`) REFERENCES `matterhorn`.`FORMATIONS` (`id`);
+
+## Tabella formazioni di una partita
+CREATE TABLE `matterhorn`.`MATCHES_FORMATIONS` (
+	`match_id` BIGINT UNSIGNED NOT NULL,
+   `team_id` BIGINT UNSIGNED NOT NULL,
+   `position` TINYINT UNSIGNED NOT NULL,
+   `player_id` BIGINT UNSIGNED NOT NULL,
+   `match_time` TINYINT UNSIGNED NOT NULL DEFAULT 0
+);
+
