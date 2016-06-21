@@ -1,8 +1,8 @@
 #!/bin/bash
 
-ERL_VER=`erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().' -noshell`
+ERL_VER=`awk -F, 'NR==1 {gsub(/"/,"",$3);print $3}' "$(dirname $(readlink -f $(which erl)))/../releases/RELEASES"`
 
-if [ $ERL_VER = "18" ]; then
+if [ $ERL_VER -eq 18 ]; then
 	APP_PATH=libs/Emysql18
 else
 	APP_PATH=libs/Emysql17

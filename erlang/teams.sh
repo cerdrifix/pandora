@@ -11,5 +11,7 @@ fi;
 #echo "Using app path: $APP_PATH"
 
 erlc db.erl
+erlc utils.erl
 erlc players.erl
-erl -pa $APP_PATH -s players run -s init stop -noshell -config pandora.config
+erlc teams.erl
+erl -pa $APP_PATH -s teams run -s init stop -noshell -config pandora.config

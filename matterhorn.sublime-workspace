@@ -376,66 +376,83 @@
 	"buffers":
 	[
 		{
-			"file": "matterhorn/app.js",
+			"contents": "% ------------------------------------------------------------------------\n% Emysql: Stored procedure, a minimal sample\n% H. Diedrich <hd2010@eonblast.com> - Eonblast http://www.eonblast.com\n% 12 Jun 2010\n% Thanks to Seven Du <https://github.com/seven1240>\n% ------------------------------------------------------------------------\n%\n% Create local mysql database (or re-use the one made for a_hello):\n%\n% $ mysql ...\n% mysql> create database hello_database;\n% mysql> use hello_database;\n% mysql> create table hello_table (hello_text char(20));\n% mysql> grant all privileges on hello_database.* to hello_username@localhost identified by 'hello_password';\n% mysql> quit\n%\n% On *nix build and run using the batch e_stored_procedure in folder samples/:\n%\n% $ ./e_stored_procedure\n%\n% - or - \n%\n% Make emysql and start this sample directly, along these lines:\n%\n% $ cd Emysql\n% $ make\n% $ cd samples\n% $ erlc e_stored_procedure.erl\n% $ erl -pa ../ebin -s e_stored_procedure run -s init stop -noshell\n%\n% ------------------------------------------------------------------------\n%\n% Expected Output: (note the result being a list, and the final ok_package)\n%\n%   Connect\n%   -------\n%   \n%   Create Record\n%   -------------\n%   \n%   Test Select\n%   -----------\n%   {result_packet,6,\n%                  [{field,2,<<\"def\">>,<<\"hello_database\">>,<<\"hello_table\">>,\n%                          <<\"hello_table\">>,<<\"hello_text\">>,<<\"hello_text\">>,\n%                          254,<<>>,33,60,0,0}],\n%                  [[<<\"Hello World!\">>],[<<\"Hello World!\">>]],\n%                  <<>>}\n%   \n%   Create Stored Procedure\n%   -----------------------\n%   {ok_packet,1,0,0,2,0,[]}\n%   \n%   Call Stored Procedure\n%   ---------------------\n%   [{result_packet,6,\n%                   [{field,2,<<\"def\">>,<<\"hello_database\">>,<<\"hello_table\">>,\n%                           <<\"hello_table\">>,<<\"hello_text\">>,<<\"hello_text\">>,\n%                           254,<<>>,33,60,0,0}],\n%                   [[<<\"Hello World!\">>],[<<\"Hello World!\">>]],\n%                   <<>>},\n%    {ok_packet,7,0,0,34,0,[]}]\n%   %   \n% ------------------------------------------------------------------------\n\n-module(e_stored_procedure).\n-export([run/0]).\n\nrun() ->\n\n	crypto:start(),\n	application:start(emysql),\n\n	io:format(\"~nConnect~n-------~n\", []),\n\n	emysql:add_pool(hello_pool, [{size,1},\n				     {user,\"hello_username\"},\n				     {password,\"hello_password\"},\n				     {database,\"hello_database\"},\n				     {encoding,utf8}]),\n\n	io:format(\"~nCreate Record~n-------------~n\", []),\n	emysql:execute(hello_pool,\n		<<\"INSERT INTO hello_table SET hello_text = 'Hello World!'\">>),\n\n	io:format(\"~nTest Select~n-----------~n\", []), \n	Result1 = emysql:execute(hello_pool,\n  	<<\"select * from hello_table limit 2\">>),\n	io:format(\"~p~n\", [Result1]),\n\n	io:format(\"~nCreate Stored Procedure~n-----------------------~n\", []),\n	Result2 = emysql:execute(hello_pool,\n  	<<\"create procedure sp_hello() begin select * from hello_table limit 2; end\">>),\n	io:format(\"~p~n\", [Result2]),\n\n	io:format(\"~nCall Stored Procedure~n---------------------~n\", []),\n	Result3 = emysql:execute(hello_pool,\n	   	<<\"call sp_hello();\">>),\n		io:format(\"~p~n\", [Result3]),\n	\n	done.\n",
+			"file": "erlang/libs/Emysql-master/samples/e_stored_procedure.erl",
+			"file_size": 3202,
+			"file_write_time": 131108843576200752,
 			"settings":
 			{
-				"buffer_size": 1438,
+				"buffer_size": 3202,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "db/Matterhorn_creation.sql",
+			"file": "erlang/players.erl",
 			"settings":
 			{
-				"buffer_size": 5731,
+				"buffer_size": 1474,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "matterhorn/libs/Auth.js",
+			"file": "elibs/Emysql17/src/emysql_conv.erl",
 			"settings":
 			{
-				"buffer_size": 1178,
+				"buffer_size": 2842,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "matterhorn/libs/MySqlConnector.js",
+			"file": "elibs/Emysql18/samples/c_rows_as_records.erl",
 			"settings":
 			{
-				"buffer_size": 809,
+				"buffer_size": 3014,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "matterhorn/libs/GenericConnector.js",
+			"file": "erlang/players.sh",
 			"settings":
 			{
-				"buffer_size": 1563,
+				"buffer_size": 307,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "matterhorn/www/login.html",
+			"file": "erlang/skills.erl",
 			"settings":
 			{
-				"buffer_size": 1274,
+				"buffer_size": 797,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "matterhorn/www/js/libs/log.js",
+			"file": "erlang/db.erl",
 			"settings":
 			{
-				"buffer_size": 1959,
+				"buffer_size": 547,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "matterhorn/www/js/libs/net.js",
+			"contents": "% ------------------------------------------------------------------------\n% Emysql: sample for accessing rows as json\n% M. Dorner <dorner.michal@gmail.com>\n% 17 Jun 2013\n% ------------------------------------------------------------------------\n%\n% This sample does the same as the previous samples but converts row data to erlang representation of JSON.\n% For actual JSON string use jsx (https://github.com/talentdeficit/jsx) or jiffy (https://github.com/davisp/jiffy).\n%\n% ------------------------------------------------------------------------\n%\n% Create local mysql database (or re-use the one made for a_hello):\n%\n% $ mysql ...\n% mysql> create database hello_database;\n% mysql> use hello_database;\n% mysql> create table hello_table (hello_text char(20));\n% mysql> grant all privileges on hello_database.* to hello_username@localhost identified by 'hello_password';\n% mysql> quit\n%\n% On *nix build and run using the batch a_hello in folder samples/:\n%\n% $ ./g_rows_as_json\n%\n% - or -\n%\n% Make emysql and start this sample directly, along these lines:\n%\n% $ cd Emysql\n% $ make\n% $ cd samples\n% $ erlc g_rows_as_json.erl\n% $ erl -pa ../ebin -s g_rows_as_json run -s init stop -noshell\n%\n% ------------------------------------------------------------------------\n%\n% Expected Output:\n%\n% ...\n% ... many PROGRESS REPORT lines ...\n% ...\n%\n% JSON: [[{<<\"hello_text\">>,<<\"Hello World!\">>}]]\n%\n% ------------------------------------------------------------------------\n\n-module(g_rows_as_json).\n-export([run/0]).\n\n\nrun() ->\n\n	application:start(sasl),\n	crypto:start(),\n	application:start(emysql),\n\n	emysql:add_pool(hello_pool, [{size,1},\n				     {user,\"root\"},\n				     {password,\"bill2kill\"},\n				     {database,\"matterhorn\"},\n				     {encoding,utf8}]),\n\n	emysql:execute(hello_pool,\n		<<\"INSERT INTO hello_table SET hello_text = 'Hello World!'\">>),\n\n	Result = emysql:execute(hello_pool, <<\"SELECT * from hello_table\">>),\n\n	%% -------------------------------------------------------------------\n	%% JSON Fetch:                                                      2\n	%% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n\n	JSON = emysql:as_json(Result),\n\n	%% -------------------------------------------------------------------\n\n	io:format(\"~n~s~n\", [string:chars($-,72)]),\n\n	%% -------------------------------------------------------------------\n	%% JSON Use   :                                                      3\n	%% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n\n    io:format(\"JSON: ~p~n\", [JSON]),\n\n	%% -------------------------------------------------------------------\n\n    ok.\n\n",
+			"file": "erlang/libs/Emysql-master/samples/g_rows_as_json.erl",
+			"file_size": 2627,
+			"file_write_time": 131109063777479613,
 			"settings":
 			{
-				"buffer_size": 3711,
+				"buffer_size": 2627,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "-record(skill, {id, description}).\n-record(speciality, {id, description}).\n-record(player, {\n	id, \n	name, \n	surname,  \n	birth_day,\n	age, \n	country, \n	personality, \n	form, \n	experience, \n	month_salary,\n	goalKeeper,\n	defense,\n	cross,\n	midField,\n	forward,\n	technique,\n	unpredictable,\n	technic,\n	quick,\n	powerful,\n	playmaking,\n	head,\n	goalSense,\n	freeKicks,\n	dribbling,\n	assist\n}).",
+			"file": "erlang/records.hrl",
+			"file_size": 377,
+			"file_write_time": 131108843576040761,
+			"settings":
+			{
+				"buffer_size": 377,
 				"line_ending": "Unix"
 			}
 		}
@@ -472,9 +489,24 @@
 	},
 	"expanded_folders":
 	[
+		"/home/cerdrifix/Documents/Dev/pandora/erlang",
+		"/home/cerdrifix/Documents/Dev/pandora/erlang/include",
+		"/home/cerdrifix/Documents/Dev/pandora/erlang/libs"
 	],
 	"file_history":
 	[
+		"/home/cerdrifix/Documents/Dev/pandora/erlang/skills.erl",
+		"/home/cerdrifix/Documents/Dev/pandora/erlang/skills",
+		"/home/cerdrifix/Documents/Dev/pandora/erlang/erl_crash.dump",
+		"/home/cerdrifix/Documents/Dev/pandora/erlang/shell.sh",
+		"/home/cerdrifix/Documents/Dev/pandora/db/Matterhorn_creation.sql",
+		"/home/cerdrifix/Documents/Dev/pandora/matterhorn/www/js/libs/log.js",
+		"/home/cerdrifix/Documents/Dev/pandora/matterhorn/www/js/libs/net.js",
+		"/home/cerdrifix/Documents/Dev/pandora/matterhorn/www/login.html",
+		"/home/cerdrifix/Documents/Dev/pandora/matterhorn/libs/GenericConnector.js",
+		"/home/cerdrifix/Documents/Dev/pandora/matterhorn/libs/MySqlConnector.js",
+		"/home/cerdrifix/Documents/Dev/pandora/matterhorn/libs/Auth.js",
+		"/home/cerdrifix/Documents/Dev/pandora/matterhorn/app.js",
 		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/app.conf",
 		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/www/js/libs/net.js",
 		"/Users/cerdrifix/Documents/Projects/Madds/matterhorn/www/js/libs/jquery.min.js",
@@ -590,23 +622,11 @@
 		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/cedacri/organigramma.json",
 		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/cedacri/provisioning.json",
 		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/desio/configurazione_menu.json",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/desio/configurazione_profili.json",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/desio/gruppi_aziendali.json",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/desio/organigramma.json",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/desio/provisioning.json",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/desio/selfResetLogin.json",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/configurazione_menu.json",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/console_controllo_procedures.json",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/provisioning.json",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/sedi.json",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/ced/cedacri.fast.client.plugins.menu.js",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/jquery.jqGrid.src.js",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/p/organigramma/custom.js",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/p/configurazione_sistema/custom.css"
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/desio/configurazione_profili.json"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 82.0
 	},
 	"find_in_files":
 	{
@@ -631,6 +651,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\n	",
+			"skills",
+			"skill",
+			"skills",
+			"skill",
+			"shell.sh",
+			"Key",
 			"console.log",
 			"libs.",
 			"cedacr",
@@ -751,21 +778,15 @@
 			"databin",
 			"procedure",
 			"select",
-			"today",
-			"\"type\": \"list\"",
-			"list",
-			"\n							\"data\": {\n								\"type\": \"procedure\",",
-			"list",
-			"page-data",
-			"page-data-key",
-			"ID_PERSON"
+			"today"
 		],
 		"highlight": true,
-		"in_selection": false,
+		"in_selection": true,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
 		[
+			"",
 			"libs.log.print",
 			"mds.libs.",
 			"\"ref-page-id\": \"associa_valori_a_ruoli_page\",\n									\"name\":",
@@ -795,60 +816,59 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "matterhorn/app.js",
+					"file": "erlang/libs/Emysql-master/samples/e_stored_procedure.erl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1438,
+						"buffer_size": 3202,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								511,
-								511
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/Erlang/Erlang.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1254.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "db/Matterhorn_creation.sql",
+					"file": "erlang/players.erl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5731,
+						"buffer_size": 1474,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								701,
-								701
+								513,
+								513
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/SQL/SQL.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Erlang/Erlang.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -859,84 +879,26 @@
 				},
 				{
 					"buffer": 2,
-					"file": "matterhorn/libs/Auth.js",
+					"file": "elibs/Emysql17/src/emysql_conv.erl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1178,
+						"buffer_size": 2842,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								588,
-								588
+								1428,
+								1428
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/Erlang/Erlang.sublime-syntax",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "matterhorn/libs/MySqlConnector.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 809,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								733,
-								733
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "matterhorn/libs/GenericConnector.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1563,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								910,
-								910
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -946,86 +908,177 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "matterhorn/www/login.html",
-					"semi_transient": false,
+					"buffer": 3,
+					"file": "elibs/Emysql18/samples/c_rows_as_records.erl",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1274,
+						"buffer_size": 3014,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1086,
-								1086
+								2401,
+								2401
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/Erlang/Erlang.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 66.0,
+						"translation.y": 1083.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "matterhorn/www/js/libs/log.js",
+					"buffer": 4,
+					"file": "erlang/players.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1959,
+						"buffer_size": 307,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1368,
-								1946
+								247,
+								247
+							],
+							[
+								280,
+								280
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "erlang/skills.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 797,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								790,
+								790
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "matterhorn/www/js/libs/net.js",
+					"buffer": 6,
+					"file": "erlang/db.erl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3711,
+						"buffer_size": 547,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1575,
-								1575
+								362,
+								362
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/Erlang/Erlang.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 368.0,
+						"translation.y": 114.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "erlang/libs/Emysql-master/samples/g_rows_as_json.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1747,
+								1747
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 855.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "erlang/records.hrl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 377,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								373,
+								373
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
@@ -1073,7 +1126,7 @@
 	"project": "matterhorn.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 138.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1082,6 +1135,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"emysqlconv",
+				"elibs/Emysql17/src/emysql_conv.erl"
+			],
+			[
+				"reco",
+				"erlang/records.hrl"
+			],
 			[
 				"kdialog",
 				"css/kdialogs.css"

@@ -1,38 +1,37 @@
 -module(players).
--export([run/0, get/1, print/1]).
+-export([run/0, get/1, getByTeam/1, print/1, toString/1]).
 -include("include/records.hrl").
--include("include/emysql.hrl").
-
--define(TABLE, "PLAYERS").
--define(KEY, "id").
--define(FIELDS, ["id, name, surname,  birth_day, age, country, personality, form, experience, month_salary, goalKeeper, defense, cross, midField, forward, technique, unpredictable, technic, quick, powerful, playmaking, head, goalSense, freeKicks, dribbling, assist"]).
 
 %% Used to manage players definitions
 
 run() ->
-	players:print(10).
+	players:getByTeam(1).
 
 get(Key) ->
 	Query = "call SP_PLAYERS_GETBYID(?, null)",
-	[begin io:format("query: ~p~n", [Query]) end],
-	%Result = db:get(Query, [Key]),
 	Result = db:get(Query, [Key]),
-	%[{_, _, Columns, Rows, _}, _] = Result,
-	%[begin io:format("Result: ~p~n~n~n~n~n~n~n~n", [Result]) end],
-	%[begin io:format("Columns: ~p~n~n~n~n~n~n~n~n", [Columns]) end],
+	Fields = record_info(fields, player),
+	utils:as_record(Result, player, Fields).
 
-	%S = lists:seq(1, length(Columns)),
-    %P = lists:zip([ binary_to_atom(C1#field.name, utf8) || C1 <- Columns ], S),
-	%{_, _, Fields, _, _} = Result
-	%[begin io:format("P: ~p~n~n~n~n~n~n~n~n", [P]) end]
-	%[begin io:format("~n~n~nColumns: ~p~n~n~n~n", [Fields]) end].
-	Items = emysql:as_record(Result, player, record_info(fields, player)),
-	Items.
+getByTeam(TeamId) ->
+	Query = "call SP_PLAYERS_GETBYTEAMID(?, null)",
+	Result = db:get(Query, [TeamId]),
+	Fields = record_info(fields, player),
+	Players = utils:as_record(Result, player, Fields),
+	[begin
+		players:toString(Player)
+	end || Player <- Players],
+	Players.
 
 print(Key) ->
 	Items = players:get(Key),
 	[begin
-		%io:format("player: ~p, ~p ~p~n   Age: ~p~n   Country: ~p~n", [Item#player.id, Item#player.surname, Item#player.name, Item#player.age, Item#player.country])
-		io:format("player: ~p~n~n~n", [Item])
+		players:toString(Item)
 	end || Item <- Items],
 	ok.
+
+toString(Player) ->
+	Age = string:tokens(bitstring_to_list(Player#player.age), ":"),
+	Years = lists:nth(1, Age),
+	Days = lists:nth(2, Age),
+	io:format("Player: ~s ~s (~s years and ~s days)~n  country: ~s~n  goalKeeper: ~f~n  defense: ~f~n  cross: ~f~n  midField: ~f~n  forward: ~f~n  technique: ~f~n~n", [Player#player.name, Player#player.surname, Years, Days, Player#player.country, Player#player.goalKeeper, Player#player.defense, Player#player.cross, Player#player.midField, Player#player.forward, Player#player.technique ]).

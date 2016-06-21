@@ -1,5 +1,11 @@
+
+% Record definition for a Skill
 -record(skill, {id, description}).
+
+% Record definition for a Specialty
 -record(speciality, {id, description}).
+
+% Record definition for a Player
 -record(player, {
 	id, 
 	name, 
@@ -27,4 +33,13 @@
 	freeKicks,
 	dribbling,
 	assist
+}).
+
+% Record definition for a Team
+-record(team, {
+	id,
+	description,
+	owner,
+	country,
+	active
 }).
