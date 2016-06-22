@@ -1,11 +1,12 @@
 -module(players).
--export([run/0, get/1, getByTeam/1, print/1, toString/1]).
+-export([run/0, get/1, getByTeam/1, getByMatchAndTeam/4, print/1, toString/1]).
 -include("include/records.hrl").
 
 %% Used to manage players definitions
 
 run() ->
-	players:getByTeam(1).
+	%players:getByTeam(1).
+	players:getByMatchAndTeam(1, 1, 1, 0).
 
 get(Key) ->
 	Query = "call SP_PLAYERS_GETBYID(?, null)",
@@ -16,6 +17,16 @@ get(Key) ->
 getByTeam(TeamId) ->
 	Query = "call SP_PLAYERS_GETBYTEAMID(?, null)",
 	Result = db:get(Query, [TeamId]),
+	Fields = record_info(fields, player),
+	Players = utils:as_record(Result, player, Fields),
+	[begin
+		players:toString(Player)
+	end || Player <- Players],
+	Players.
+
+getByMatchAndTeam(SeasonId, MatchId, TeamId, MatchMinute) ->
+	Query = "call SP_PLAYERS_GETBYMATCHANDTEAMID(?, ?, ?, ?, null)",
+	Result = db:get(Query, [SeasonId, MatchId, TeamId, MatchMinute]),
 	Fields = record_info(fields, player),
 	Players = utils:as_record(Result, player, Fields),
 	[begin

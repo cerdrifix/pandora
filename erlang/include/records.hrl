@@ -32,7 +32,8 @@
 	goalSense,
 	freeKicks,
 	dribbling,
-	assist
+	assist,
+	position
 }).
 
 % Record definition for a Team
@@ -42,4 +43,15 @@
 	owner,
 	country,
 	active
+}).
+
+% Record definition for a Single Match
+-record(match, {
+	dueDate,
+	country,
+	leagueId,
+	seasonId,
+	week,
+	homeTeam,
+	awayTeam
 }).
