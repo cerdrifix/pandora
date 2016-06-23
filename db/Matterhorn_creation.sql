@@ -165,16 +165,16 @@ ADD CONSTRAINT `TS_SKILLS_FK`
 ## Tabella delle partite
 CREATE TABLE `matterhorn`.`MATCHES` (
 	`id` SERIAL,
-   `due_date` DATETIME,
-   `country` VARCHAR(2) NOT NULL,
-   `league_id` INT UNSIGNED NOT NULL,
-   `season_id` INT UNSIGNED NOT NULL,
-   `week` TINYINT UNSIGNED NOT NULL,
-   `home_team_id` BIGINT UNSIGNED NOT NULL,
-   `home_team_formation_id` VARCHAR(5) NOT NULL,
-   `away_team_id` BIGINT UNSIGNED NOT NULL,
-   `away_team_formation_id` VARCHAR(5) NOT NULL,
-   PRIMARY KEY (`id`)
+	`due_date` DATETIME,
+	`country` VARCHAR(2) NOT NULL,
+	`league_id` INT UNSIGNED NOT NULL,
+	`season_id` INT UNSIGNED NOT NULL,
+	`week` TINYINT UNSIGNED NOT NULL,
+	`home_team_id` BIGINT UNSIGNED NOT NULL,
+	`home_team_formation_id` VARCHAR(5) NOT NULL,
+	`away_team_id` BIGINT UNSIGNED NOT NULL,
+	`away_team_formation_id` VARCHAR(5) NOT NULL,
+	PRIMARY KEY (`id`)
 );
 ALTER TABLE `matterhorn`.`MATCHES` ADD INDEX `MATCHES_HTEAMS_FK_idx` (`home_team_id` ASC);
 ALTER TABLE `matterhorn`.`MATCHES` ADD INDEX `MATCHES_ATEAMS_FK_idx` (`away_team_id` ASC);
@@ -192,9 +192,9 @@ ADD CONSTRAINT `MATCHES_ATFORM_FK`
 ## Tabella formazioni di una partita
 CREATE TABLE `matterhorn`.`MATCHES_FORMATIONS` (
 	`match_id` BIGINT UNSIGNED NOT NULL,
-   `team_id` BIGINT UNSIGNED NOT NULL,
-   `position` TINYINT UNSIGNED NOT NULL,
-   `player_id` BIGINT UNSIGNED NOT NULL,
-   `match_time` TINYINT UNSIGNED NOT NULL DEFAULT 0
+	`team_id` BIGINT UNSIGNED NOT NULL,
+	`position` TINYINT UNSIGNED NOT NULL,
+	`player_id` BIGINT UNSIGNED NOT NULL,
+	`match_time` TINYINT UNSIGNED NOT NULL DEFAULT 0
 );
 

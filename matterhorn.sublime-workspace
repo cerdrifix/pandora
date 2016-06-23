@@ -387,18 +387,47 @@
 			"file": "erlang/players.erl",
 			"settings":
 			{
-				"buffer_size": 1677,
+				"buffer_size": 1629,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "-module(match).\n-export([start/1]).\n-include(\"include/records.hrl\").\n\nget(MatchId) ->\n	\n\nstart(MatchId) ->\n	ok.",
-			"file": "erlang/match.erl",
-			"file_size": 67,
-			"file_write_time": 131110837489500514,
+			"file": "erlang/matches.erl",
 			"settings":
 			{
-				"buffer_size": 111,
+				"buffer_size": 1369,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "erlang/include/parameters.hrl",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "erlang/include/emysql.hrl",
+			"settings":
+			{
+				"buffer_size": 6890,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "erlang/utils.erl",
+			"settings":
+			{
+				"buffer_size": 806,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "erlang/matches.sh",
+			"settings":
+			{
+				"buffer_size": 390,
 				"line_ending": "Unix"
 			}
 		},
@@ -411,10 +440,13 @@
 			}
 		},
 		{
+			"contents": "\n% Record definition for a Skill\n-record(skill, {id, description}).\n\n% Record definition for a Specialty\n-record(speciality, {id, description}).\n\n% Record definition for a Player\n-record(player, {\n	id, \n	name, \n	surname,  \n	birth_day,\n	age, \n	country, \n	personality, \n	form, \n	experience, \n	month_salary,\n	goalKeeper,\n	defense,\n	cross,\n	midField,\n	forward,\n	technique,\n	unpredictable,\n	technic,\n	quick,\n	powerful,\n	playmaking,\n	head,\n	goalSense,\n	freeKicks,\n	dribbling,\n	assist,\n	position\n}).\n\n% Record definition for a Team\n-record(team, {\n	id,\n	description,\n	owner,\n	country,\n	active\n}).\n\n% Record definition for a Single Match\n-record(match, {\n	id :: string(),\n	dueDate,\n	country :: string(),\n	leagueId :: number(),\n	seasonId :: number(),\n	week :: number(),\n	homeTeamId :: number(),\n	homeTeamDescription :: string(),\n	homeTeamOwner :: string(),\n	homeTeamFormation :: string(),\n	awayTeamId :: number(),\n	awayTeamDescription :: string(),\n	awayTeamOwner :: string(),\n	awayTeamFormation :: string()\n}).\n\n% Test pesi\n-record()",
 			"file": "erlang/include/records.hrl",
+			"file_size": 1001,
+			"file_write_time": 131111501941706472,
 			"settings":
 			{
-				"buffer_size": 720,
+				"buffer_size": 1024,
 				"line_ending": "Unix"
 			}
 		}
@@ -453,18 +485,22 @@
 	[
 		"/home/cerdrifix/Documents/Dev/pandora",
 		"/home/cerdrifix/Documents/Dev/pandora/elibs",
+		"/home/cerdrifix/Documents/Dev/pandora/elibs/Emysql17/include",
+		"/home/cerdrifix/Documents/Dev/pandora/elibs/Emysql18/include",
 		"/home/cerdrifix/Documents/Dev/pandora/erlang",
 		"/home/cerdrifix/Documents/Dev/pandora/erlang/include",
 		"/home/cerdrifix/Documents/Dev/pandora/erlang/libs"
 	],
 	"file_history":
 	[
+		"/home/cerdrifix/Documents/Dev/pandora/erlang/include/emysql.hrl",
+		"/home/cerdrifix/Documents/Dev/pandora/erlang/iso_fmt.erl",
+		"/home/cerdrifix/Documents/Dev/pandora/erlang/utils.erl",
+		"/home/cerdrifix/Documents/Dev/pandora/erlang/matches.sh",
 		"/home/cerdrifix/Documents/Dev/pandora/erlang/pandora.config",
 		"/home/cerdrifix/Documents/Dev/pandora/erlang/players.sh",
-		"/home/cerdrifix/Documents/Dev/pandora/erlang/utils.erl",
 		"/home/cerdrifix/Documents/Dev/pandora/erlang/teams.erl",
 		"/home/cerdrifix/Documents/Dev/pandora/erlang/teams.sh",
-		"/home/cerdrifix/Documents/Dev/pandora/erlang/include/emysql.hrl",
 		"/home/cerdrifix/Documents/Dev/pandora/erlang/skills",
 		"/home/cerdrifix/Documents/Dev/pandora/erlang/test.sh",
 		"/home/cerdrifix/Documents/Dev/pandora/elibs/Emysql17/src/emysql_conn.erl",
@@ -584,9 +620,7 @@
 		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/js/customs/selfResetLogin.custom.js",
 		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/gruppi_aziendali.json",
 		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/newco/societa.json",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/ced/configurazione_profili.json",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/fast.json",
-		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/css/wrapper.css"
+		"/Users/cerdrifix/Documents/Lavoro/Progetti/Progetto Cedacri Fast/SVN/Fast/Cedacri.Fast.UI.Web.TestClient/conf/ced/configurazione_profili.json"
 	],
 	"find":
 	{
@@ -615,6 +649,15 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"PlayersHome",
+			"d",
+			"io:format",
+			"string",
+			"home",
+			"player",
+			"home",
+			"H",
+			"home",
 			"~s",
 			"Item",
 			"team",
@@ -733,16 +776,7 @@
 			"for(var ",
 			"data-type",
 			"\"entity\"",
-			"\"entity\":",
-			"{ \"entity\":",
-			"{ \"entity\": ",
-			"entity",
-			"{ \"entity\": ",
-			"{ \"entity",
-			"callProcedure",
-			"destinationty",
-			"destinationtype",
-			"default"
+			"\"entity\":"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -780,7 +814,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -810,7 +844,7 @@
 						"translation.y": 488.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -819,15 +853,130 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1677,
+						"buffer_size": 1629,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								333,
-								333
+								960,
+								960
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 114.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "erlang/matches.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1369,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								105,
+								105
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "erlang/include/parameters.hrl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "erlang/include/emysql.hrl",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 6890,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Erlang/Erlang.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1710.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "erlang/utils.erl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 806,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								742,
+								742
 							]
 						],
 						"settings":
@@ -839,39 +988,39 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "erlang/match.erl",
+					"buffer": 6,
+					"file": "erlang/matches.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 111,
+						"buffer_size": 390,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								87,
-								87
+								294,
+								294
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Erlang/Erlang.sublime-syntax"
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 7,
 					"file": "erlang/teams.erl",
 					"semi_transient": false,
 					"settings":
@@ -893,27 +1042,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 185.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 8,
 					"file": "erlang/include/records.hrl",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 720,
+						"buffer_size": 1024,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								720,
-								720
+								673,
+								673
 							]
 						],
 						"settings":
@@ -937,7 +1086,7 @@
 	},
 	"input":
 	{
-		"height": 31.0
+		"height": 64.0
 	},
 	"layout":
 	{

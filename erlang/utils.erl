@@ -1,5 +1,5 @@
 -module(utils).
--export([as_record/3]).
+-export([as_record/3, date_format/1]).
 
 -include("include/emysql.hrl").
 
@@ -19,6 +19,10 @@ as_record(Result, RecordName, Fields) when is_atom(RecordName) ->
 	Fun = fun(A) -> A end,
 	F1 = fun(Row) ->
 		RecordData = [ Fx(Row) || Fx <- Fs ],
-		Fun(list_to_tuple([player|RecordData]))
+		Fun(list_to_tuple([RecordName|RecordData]))
 	end,
 	[ F1(Row) || Row <- Rows ].
+
+date_format(Date) ->
+	{{YYYY, MM, DD}, _} = Date,
+	io_lib:format("~4..0b-~2..0b-~2..0b", [YYYY, MM, DD]).

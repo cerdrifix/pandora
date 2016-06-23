@@ -28,11 +28,7 @@ getByMatchAndTeam(SeasonId, MatchId, TeamId, MatchMinute) ->
 	Query = "call SP_PLAYERS_GETBYMATCHANDTEAMID(?, ?, ?, ?, null)",
 	Result = db:get(Query, [SeasonId, MatchId, TeamId, MatchMinute]),
 	Fields = record_info(fields, player),
-	Players = utils:as_record(Result, player, Fields),
-	[begin
-		players:toString(Player)
-	end || Player <- Players],
-	Players.
+	utils:as_record(Result, player, Fields).
 
 print(Key) ->
 	Items = players:get(Key),
@@ -45,4 +41,16 @@ toString(Player) ->
 	Age = string:tokens(bitstring_to_list(Player#player.age), ":"),
 	Years = lists:nth(1, Age),
 	Days = lists:nth(2, Age),
-	io:format("Player: ~s ~s (~s years and ~s days)~n  country: ~s~n  goalKeeper: ~f~n  defense: ~f~n  cross: ~f~n  midField: ~f~n  forward: ~f~n  technique: ~f~n~n", [Player#player.name, Player#player.surname, Years, Days, Player#player.country, Player#player.goalKeeper, Player#player.defense, Player#player.cross, Player#player.midField, Player#player.forward, Player#player.technique ]).
+	io:format("~nPlayer: ~s ~s (~s years and ~s days)~n  country: ~s~n  goalKeeper: ~f~n  defense: ~f~n  cross: ~f~n  midField: ~f~n  forward: ~f~n  technique: ~f~n", [
+		Player#player.name, 
+		Player#player.surname, 
+		Years, 
+		Days, 
+		Player#player.country, 
+		Player#player.goalKeeper, 
+		Player#player.defense, 
+		Player#player.cross, 
+		Player#player.midField, 
+		Player#player.forward, 
+		Player#player.technique 
+	]).

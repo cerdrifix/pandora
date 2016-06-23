@@ -47,11 +47,18 @@
 
 % Record definition for a Single Match
 -record(match, {
+	id :: string(),
 	dueDate,
-	country,
-	leagueId,
-	seasonId,
-	week,
-	homeTeam,
-	awayTeam
+	country :: string(),
+	leagueId :: number(),
+	seasonId :: number(),
+	week :: number(),
+	homeTeamId :: number(),
+	homeTeamDescription :: string(),
+	homeTeamOwner :: string(),
+	homeTeamFormation :: string(),
+	awayTeamId :: number(),
+	awayTeamDescription :: string(),
+	awayTeamOwner :: string(),
+	awayTeamFormation :: string()
 }).
