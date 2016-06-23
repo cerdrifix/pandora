@@ -41,7 +41,7 @@ toString(Player) ->
 	Age = string:tokens(bitstring_to_list(Player#player.age), ":"),
 	Years = lists:nth(1, Age),
 	Days = lists:nth(2, Age),
-	io:format("~nPlayer: ~s ~s (~s years and ~s days)~n  country: ~s~n  goalKeeper: ~f~n  defense: ~f~n  cross: ~f~n  midField: ~f~n  forward: ~f~n  technique: ~f~n", [
+	io:format("~nPlayer: ~s ~s (~s years and ~s days)~n  country: ~s~n  goalKeeper: ~f~n  defense: ~f~n  cross: ~f~n  midField: ~f~n  forward: ~f~n  technique: ~f~n  position: ~b~n", [
 		Player#player.name, 
 		Player#player.surname, 
 		Years, 
@@ -52,5 +52,6 @@ toString(Player) ->
 		Player#player.cross, 
 		Player#player.midField, 
 		Player#player.forward, 
-		Player#player.technique 
+		Player#player.technique,
+		Player#player.position
 	]).
