@@ -7,6 +7,7 @@
 -define(RIGHT_FORWARD, 16#06).
 
 -record(primarySkillWeight, {
+	id,
 	formation,
 	sector,
 	position,
