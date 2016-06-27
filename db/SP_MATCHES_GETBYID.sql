@@ -18,11 +18,13 @@ BEGIN
 			M.home_team_id as 'homeTeamId',
 			TH.description as 'homeTeamDescription',
             concat(UH.surname, " ", UH.name) as 'homeTeamOwner',
-            FH.description as 'homeTeamFormation',
+            M.home_team_formation_id as 'homeTeamFormation',
+            FH.description as 'homeTeamFormationDescription',
 			M.away_team_id as 'awayTeamId',
 			TA.description as 'awayTeamDescription',
             concat(UA.surname, " ", UA.name) as 'awayTeamOwner',
-            FA.description as 'awayTeamFormation'
+            M.away_team_formation_id as 'awayTeamFormation',
+            FA.description as 'awayTeamFormationDescription'
 	FROM	MATCHES M INNER JOIN
 			TEAMS TH on TH.id = M.home_team_id INNER JOIN
             FORMATIONS FH on FH.id = M.home_team_formation_id INNER JOIN

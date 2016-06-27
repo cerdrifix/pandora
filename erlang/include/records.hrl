@@ -57,8 +57,10 @@
 	homeTeamDescription :: string(),
 	homeTeamOwner :: string(),
 	homeTeamFormation :: string(),
+	homeTeamFormationDescription :: string(),
 	awayTeamId :: number(),
 	awayTeamDescription :: string(),
 	awayTeamOwner :: string(),
-	awayTeamFormation :: string()
+	awayTeamFormation :: string(),
+	awayTeamFormationDescription :: string()
 }).

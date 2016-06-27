@@ -17,6 +17,7 @@ get(Key) ->
 getPlayers(Id) ->
 	players:getByTeam(Id).
 
+
 print(Key) ->
 	Items = teams:get(Key),
 	[begin

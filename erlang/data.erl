@@ -1,5 +1,5 @@
 -module(data).
--export([init/0, init_PSW/0, read/0, traverse_table_and_show/1, stop/0]).
+-export([init/0, init_PSW/0, read/0, traverse_table_and_show/1, stop/0, getPrimarySkill/3]).
 
 -include_lib("stdlib/include/qlc.hrl").
 -include("include/data.hrl").
@@ -109,17 +109,27 @@ stop() ->
 
 
 read() ->
+	Val = data:getPrimarySkill(352, ?RIGHT_FORWARD, 13),
+	io:format("~n~nValue: ~f~n~n", [Val]).
+	% F = fun() ->
+	% 	F352 = #primarySkillWeight{formation=352, sector=?RIGHT_FORWARD, position=13, value='$1', _='_'},
+	% 	Result = '$1',
+	% 	{atomic, [Value]} = mnesia:select(primarySkillWeight, [{F352, [], [Result]}]),
+	% 	Value
+	% end,
+	% Val = mnesia:transaction(F),
+	% io:format("~n~nValue: ~s", [Val]).
+
+
+getPrimarySkill(Formation, Sector, Position) ->
+	io:format("Retrieving primary skill ~p value for position ~p in formation ~p~n", [Sector, Position, Formation]),
 	F = fun() ->
-		F352 = #primarySkillWeight{formation=352, sector=?RIGHT_FORWARD, position=13, value='$1', _='_'},
-		Result = '$1',
-		{atomic, [Value]} = mnesia:select(primarySkillWeight, [{F352, [], [Result]}]),
+		R = #primarySkillWeight{formation=Formation, sector=Sector, position=Position, value='$1', _='_'},
+		[Value] = mnesia:select(primarySkillWeight, [{R, [], ['$1']}]),
 		Value
 	end,
-	Val = mnesia:transaction(F),
-	io:format("~n~nValue: ~s", [Val]).
-
-
-
+	{atomic, Val} = mnesia:transaction(F),
+	Val.
 
 
 

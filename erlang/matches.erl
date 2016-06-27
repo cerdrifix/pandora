@@ -1,9 +1,10 @@
 -module(matches).
--export([run/0, get/1, start/1, print/1, toString/1]).
+-export([run/0, get/1, start/1, calculateMidField/2, print/1, toString/1]).
 -include("include/records.hrl").
+-include("include/data.hrl").
 
 run() ->
-	start(1).
+	matches:start(1).
 
 get(MatchId) ->
 	Query = "call SP_MATCHES_GETBYID(?, null)",
@@ -18,16 +19,26 @@ start(MatchId) ->
 	matches:toString(Match),
 	HomePlayers = players:getByMatchAndTeam(Match#match.seasonId, Match#match.id, Match#match.homeTeamId, 0),
 	io:format("~n~nHome team players~n",[]),
-	[begin
-		players:toString(Player)
-	end || Player <- HomePlayers],
-	PlayersAway = players:getByMatchAndTeam(Match#match.seasonId, Match#match.id, Match#match.awayTeamId, 0),
-	io:format("~n~nAway team players~n",[]),
-	[begin
-		players:toString(Player)
-	end || Player <- PlayersAway],
+	matches:calculateMidField(Match#match.homeTeamFormation, HomePlayers),
+	% [begin
+	% 	players:toString(Player)
+	% end || Player <- HomePlayers],
+	% AwayPlayers = players:getByMatchAndTeam(Match#match.seasonId, Match#match.id, Match#match.awayTeamId, 0),
+	% io:format("~n~nAway team players~n",[]),
+	% [begin
+	% 	players:toString(Player)
+	% end || Player <- AwayPlayers],
 	ok.
 
+calculateMidField(Formation, Players) ->
+	MF = 0,
+	[begin
+		Position = Player#player.position,
+		Val = data:getPrimarySkill(binary_to_atom(Formation, utf8), ?MIDFIELD, Position),
+		players:toString(Player),
+		io:format("  Midfield calc: ~f", [Val])
+	end || Player <- Players],
+	io:format("~n~nMidfield calculation: ~p~n~n", [MF]).
 
 print(MatchId) ->
 	Match = matches:get(MatchId),
