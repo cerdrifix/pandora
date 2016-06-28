@@ -31,12 +31,14 @@ start(MatchId) ->
 	ok.
 
 calculateMidField(Formation, Players) ->
-	MF = 0,
+	MF = 0.00,
 	[begin
 		Position = Player#player.position,
-		Val = data:getPrimarySkill(binary_to_atom(Formation, utf8), ?MIDFIELD, Position),
+		Val = data:getPrimarySkill(binary_to_list(Formation), ?MIDFIELD, Position),
 		players:toString(Player),
-		io:format("  Midfield calc: ~f", [Val])
+		PMF = Val * Player#player.midField,
+		io:format("  Midfield ratio: ~f~n           calc: ~f~n~n", [Val, PMF]),
+		MF = MF + PMF
 	end || Player <- Players],
 	io:format("~n~nMidfield calculation: ~p~n~n", [MF]).
 
