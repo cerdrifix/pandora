@@ -1,5 +1,6 @@
 -module(matches).
--export([run/0, get/1, start/1, calculateMidField/2, print/1, toString/1]).
+%-export([run/0, get/1, start/1, calculateMidField/3, calculateMidField/3, print/1, toString/1]).
+-compile(export_all).
 -include("include/records.hrl").
 -include("include/data.hrl").
 
@@ -18,29 +19,24 @@ start(MatchId) ->
 	Match = matches:get(MatchId),
 	matches:toString(Match),
 	HomePlayers = players:getByMatchAndTeam(Match#match.seasonId, Match#match.id, Match#match.homeTeamId, 0),
-	io:format("~n~nHome team players~n",[]),
-	matches:calculateMidField(Match#match.homeTeamFormation, HomePlayers),
-	% [begin
-	% 	players:toString(Player)
-	% end || Player <- HomePlayers],
-	% AwayPlayers = players:getByMatchAndTeam(Match#match.seasonId, Match#match.id, Match#match.awayTeamId, 0),
-	% io:format("~n~nAway team players~n",[]),
-	% [begin
-	% 	players:toString(Player)
-	% end || Player <- AwayPlayers],
+	AwayPlayers = players:getByMatchAndTeam(Match#match.seasonId, Match#match.id, Match#match.awayTeamId, 0),
+	%io:format("~n~nHome team players~n",[]),
+	HomeMidfieldValue = matches:calculateMidField(Match#match.homeTeamFormation, HomePlayers),
+	io:format("~nHome team midField: ~f~n~n", [HomeMidfieldValue]),
+	AwayMidfieldValue = matches:calculateMidField(Match#match.awayTeamFormation, AwayPlayers),
+	io:format("~nAway team midField: ~f~n~n", [AwayMidfieldValue]),
 	ok.
 
-calculateMidField(Formation, Players) ->
-	MF = 0.00,
-	[begin
-		Position = Player#player.position,
-		Val = data:getPrimarySkill(binary_to_list(Formation), ?MIDFIELD, Position),
-		players:toString(Player),
-		PMF = Val * Player#player.midField,
-		io:format("  Midfield ratio: ~f~n           calc: ~f~n~n", [Val, PMF]),
-		MF = MF + PMF
-	end || Player <- Players],
-	io:format("~n~nMidfield calculation: ~p~n~n", [MF]).
+
+calculateMidField(Formation, Players) -> calculateMidField(Formation, Players, 0, 0).
+
+calculateMidField(_, [], RatioSum, TotalSum) -> TotalSum/RatioSum;
+calculateMidField(Formation, [Player|Players], RatioSum, TotalSum) ->
+	Ratio = data:getPrimarySkill(binary_to_list(Formation), ?MIDFIELD, Player#player.position),
+	%players:toString(Player),
+	PMF = Ratio * Player#player.midField,
+	%io:format("  Midfield ratio: ~f~n           calc: ~f~n~n", [Ratio, PMF]),
+	calculateMidField(Formation, Players, Ratio + RatioSum, PMF + TotalSum).
 
 print(MatchId) ->
 	Match = matches:get(MatchId),

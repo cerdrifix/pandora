@@ -26,3 +26,7 @@ as_record(Result, RecordName, Fields) when is_atom(RecordName) ->
 date_format(Date) ->
 	{{YYYY, MM, DD}, _} = Date,
 	io_lib:format("~4..0b-~2..0b-~2..0b", [YYYY, MM, DD]).
+
+sum(List) -> Sum(List, 0).
+sum([], Sum) -> Sum;
+sum([H|T, Sum]) -> sum(T, H + Sum);
